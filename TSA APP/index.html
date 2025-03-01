@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Phòng luyện thi</title>
+    <link rel="icon" href="./1.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+    </style>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("contextmenu", function(event) {
+                event.preventDefault();
+            });
+        });
+
+        window.addEventListener("keydown", function(event) {
+    if (
+        event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) || 
+        (event.ctrlKey && (event.key === "U" || event.key === "S" || event.key === "F" || event.key === "P" || event.key === "A"))
+    ) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.key === "F") {
+        event.preventDefault();
+        alert("Chức năng tìm kiếm đã bị vô hiệu hóa!");
+    }
+});
+
+
+        let element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function() {
+                document.body.innerHTML = "<h1>Phát hiện DevTools! Vui lòng đóng nó.</h1>";
+            }
+        });
+        console.log(element);
+
+       
+
+        document.addEventListener("dragstart", function(event) {
+            event.preventDefault();
+        });
+        document.addEventListener("drop", function(event) {
+            event.preventDefault();
+        });
+    </script>
+</head>
+<body onkeydown="return false">
+    <iframe src="https://test.hust.edu.vn/" allowfullscreen>
+        Trình duyệt của bạn không hỗ trợ iframe hoặc trang web bị chặn.
+    </iframe>
+</body>
+</html>
